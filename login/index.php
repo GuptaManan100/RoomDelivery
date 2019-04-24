@@ -8,7 +8,7 @@
    		$webmail = mysqli_real_escape_string($db,$_POST['webmail']);
     	$password = mysqli_real_escape_string($db,$_POST['password']); 
 
-    	$sql = "Select password FROM users WHERE webmail = '$webmail'; ";
+    	$sql = "Select * FROM users WHERE webmail = '$webmail'; ";
     	$result = $db->query($sql);
     	$count = mysqli_num_rows($result);
     	if($count==0)
@@ -19,6 +19,13 @@
     		if (password_verify($password, $row["password"])) 
     		{
          		$_SESSION['login_user'] = $webmail;
+            $_SESSION['enrollnum'] = $row["enrollnum"];
+            $_SESSION['firstname'] = $row["firstname"];
+            $_SESSION['lastname'] = $row["lastname"];
+            $_SESSION['phone'] = $row["phone"];
+            $_SESSION['department'] = $row["department"];
+            $_SESSION['preferedLocation'] = $row["preferedLocation"];
+            $_SESSION['isStudent'] = $row["isStudent"];
          		if($webmail=='vendor')
          		{
          			header("Location: ../vendor/");
