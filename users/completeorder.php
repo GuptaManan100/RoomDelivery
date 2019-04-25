@@ -4,6 +4,7 @@
    //post method sent from html
    if($_SERVER["REQUEST_METHOD"]=="POST")
    {
+   	  date_default_timezone_set('Asia/Kolkata');
       $sql = "SELECT name,quantity,price,productCode FROM products;";
       $result = $db->query($sql);
       $items = array();

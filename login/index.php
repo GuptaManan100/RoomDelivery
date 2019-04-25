@@ -19,13 +19,13 @@
     		if (password_verify($password, $row["password"])) 
     		{
          		$_SESSION['login_user'] = $webmail;
-            $_SESSION['enrollnum'] = $row["enrollnum"];
-            $_SESSION['firstname'] = $row["firstname"];
-            $_SESSION['lastname'] = $row["lastname"];
-            $_SESSION['phone'] = $row["phone"];
-            $_SESSION['department'] = $row["department"];
-            $_SESSION['preferedLocation'] = $row["preferedLocation"];
-            $_SESSION['isStudent'] = $row["isStudent"];
+                $_SESSION['enrollnum'] = $row["enrollnum"];
+                $_SESSION['firstname'] = $row["firstname"];
+                $_SESSION['lastname'] = $row["lastname"];
+                $_SESSION['phone'] = $row["phone"];
+                $_SESSION['department'] = $row["department"];
+                $_SESSION['preferedLocation'] = $row["preferedLocation"];
+                $_SESSION['isStudent'] = $row["isStudent"];
          		if($webmail=='vendor')
          		{
          			header("Location: ../vendor/");
