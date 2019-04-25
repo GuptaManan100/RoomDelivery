@@ -42,8 +42,9 @@
         $amount+=$prices[str_replace("_"," ",$stuff)]*$val;
       }
       $timeorder = date("Y-m-d H:i:s");
-
-      $sql = "INSERT INTO orders VALUES (null,'".$_SESSION['enrollnum']."','".$_SESSION['isStudent']."','".$_POST['Location']."',".$amount.",'".$timeorder."');";
+      $isprep += 2;
+      $deliverTime = date('Y-m-d H:i:s',strtotime("+$isprep minutes",strtotime($timeorder)));
+      $sql = "INSERT INTO orders VALUES (null,'".$_SESSION['enrollnum']."','".$_SESSION['isStudent']."','".$_POST['Location']."',".$amount.",'".$timeorder."','".$deliverTime."');";
       $result = $db->query($sql);
       if($result)
       {
@@ -66,8 +67,6 @@
           }
         }
         echo "Amount = Rs.$amount<br>";
-        $isprep += 2;
-        $deliverTime = date('H:i:s',strtotime("+$isprep minutes",strtotime($timeorder)));
         echo "Delivery Time = $deliverTime<br>";
         echo "</div>";
         echo "<input type=\"button\" onclick=\"printDiv('print-content')\" value=\"Print Order\"/>";

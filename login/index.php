@@ -60,8 +60,11 @@
 			<form action="" method="POST">
 				<label>Webmail	:</label><input type="text" name="webmail"/><br><br>
 				<label>Password 	:</label><input type="password" name="password"/><br><br>
-				<input type="submit" value="Submit"/><br>
+				<input type="submit" value="Login"/><br>
 			</form>
 		</div>
+        <div align = "center">
+            <button onclick="window.location.href = '/roomDelivery/login/signup.php';">Signup</button>
+        </div>
 	</body>
 </html>
