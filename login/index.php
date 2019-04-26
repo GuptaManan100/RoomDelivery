@@ -51,9 +51,6 @@
         <link rel="stylesheet" type="text/css" href="loginutil.css">
 	</head>
 	<body bgcolor = "#FFFFFF">
-		<div align = "center">
-		</div>
-
         <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">

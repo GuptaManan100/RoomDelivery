@@ -34,6 +34,8 @@
 		<title>Change Password</title>
 	</head>
 	<body bgcolor = "#FFFFFF">
+        <?php include('dashboard.php'); ?>
+    <div class="main-panel" style="padding-top: 5%;">
 		<div align = "center">
             <?php if (isset($errormsg)) {?>
             <div class="alert alert-danger alert-dismissable">
@@ -41,11 +43,22 @@
                 <b>Oh snap!</b> </b> <?php echo htmlentities($errormsg); ?>
             </div>
             <?php }?>
-			<form action="" method="POST">
-				<label>Password	:</label><input type="password" name="password"/><br><br>
-				<label>New Password 	:</label><input type="password" name="newPassword"/><br><br>
-				<input type="submit" value="Change Password"/><br>
+			<form class="form-horizontal" action="" method="POST">
+                <div class="form-group">
+                    <label class="col-sm-4 col-sm-4 control-label">Password:</label>
+                    <div class="col-sm-4">
+                        <input type="password" name="password" required="required" class="form-control" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 col-sm-4 control-label">New Password:</label>
+                    <div class="col-sm-4">
+                        <input type="password" name="newPassword" required="required" class="form-control" >
+                    </div>
+                </div>
+				<input type="submit" value="Change Password" class = "btn btn-primary"/><br>
 			</form>
 		</div>
+    </div>
 	</body>
 </html>
