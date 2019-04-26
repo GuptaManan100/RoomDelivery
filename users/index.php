@@ -26,6 +26,8 @@
 	<title></title>
 </head>
 <body>
+    <?php include('dashboard.php'); ?>
+    <div class="main-panel" style="padding-top: 5%;">
 	<div class="form-panel">
         <?php if (isset($successmsg)) {?>
             <div class="alert alert-success alert-dismissable">
@@ -39,46 +41,51 @@
                 <b>Oh snap!</b> </b> <?php echo htmlentities($errormsg); ?>
             </div>
             <?php }?>
-            <h4 class="mb"><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo htmlentities($_SESSION['firstname']." ".$_SESSION['lastname']); ?>'s Profile</h4>
-            <form class="form-horizontal style-form" method="post" name="profile" >
+            <form class="form-horizontal " method="post" name="profile" >
                 <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">First Name</label>
+                    <label class="col-sm-4 col-sm-4 control-label">First Name</label>
                     <div class="col-sm-4">
                         <input type="text" name="firstname" required="required" value="<?php echo htmlentities($_SESSION['firstname']); ?>" class="form-control" >
                     </div>
-                    <label class="col-sm-2 col-sm-2 control-label">Last Name</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Last Name</label>
                     <div class="col-sm-4">
                         <input type="text" name="lastname" required="required" value="<?php echo htmlentities($_SESSION['lastname']); ?>" class="form-control" >
                     </div>
-                    <label class="col-sm-2 col-sm-2 control-label">User Email </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">User Email </label>
                     <div class="col-sm-4">
                         <input type="email" name="useremail" required="required" value="<?php echo htmlentities($_SESSION['login_user']); ?>" class="form-control" readonly>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Contact</label>
+                    <label class="col-sm-4 col-sm-4 control-label">Department </label>
+                    <div class="col-sm-4">
+                        <input type="text" name="department" value="<?php echo htmlentities($_SESSION['department']); ?>" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Contact</label>
                     <div class="col-sm-4">
                         <input type="number" name="contactno" required="required" value="<?php echo htmlentities($_SESSION['phone']); ?>" class="form-control">
                     </div>
-                    <label class="col-sm-2 col-sm-2 control-label">Prefered Delivery Location </label>
+                </div>
+                <div class = "form-group">
+                    <label class="col-sm-4 control-label">Prefered Delivery Location </label>
                     <div class="col-sm-4">
-                    	<input type="text" name="address" value="<?php echo htmlentities($_SESSION['preferedLocation']); ?>" class="form-control">
+                        <input type="text" name="address" value="<?php echo htmlentities($_SESSION['preferedLocation']); ?>" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Department </label>
-                    <div class="col-sm-4">
-                    	<input type="text" name="department" value="<?php echo htmlentities($_SESSION['department']); ?>" class="form-control" readonly>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-10" style="padding-left:25% ">
+                    <div class="col-sm-10" style="width: 100%; padding-left: 50%; padding-top: 2%;">
                         <button type="submit" name="submit" class="btn btn-primary">Update Profile</button>
                     </div>
                 </div>
             </form>
         </div>
 	<br>
-	<h2><a href = "logout.php">Sign Out</a></h2>
+</div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
    include('sessionuser.php');
+   include('dashboard.php');
+   echo "<div class=\"main-panel\" style=\"padding-top: 5%;\"> <div align = \"center\">";
 
    //post method sent from html
    if($_SERVER["REQUEST_METHOD"]=="POST")
@@ -69,7 +71,7 @@
         echo "Amount = Rs.$amount<br>";
         echo "Delivery Time = $deliverTime<br>";
         echo "</div>";
-        echo "<input type=\"button\" onclick=\"printDiv('print-content')\" value=\"Print Order\"/>";
+        echo "<input type=\"button\" onclick=\"printDiv('print-content')\" value=\"Print Order\" class = \"btn btn-primary\"/>";
       }
       else
       {
@@ -80,6 +82,9 @@
    {
       header("Location: ../users/");
    }
+
+  echo "</div>";
+  echo "</div>";
 ?>
 
 <script type="text/javascript">

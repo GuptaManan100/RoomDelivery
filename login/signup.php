@@ -35,71 +35,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="signupcss.css">
 </head>
 <body>
-	<div class="form-panel">
-            <?php if (isset($errormsg)) {?>
-            <div class="alert alert-danger alert-dismissable">
-                <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>-->
-                <b>Oh snap!</b> </b> <?php echo htmlentities($errormsg); ?>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Registration Form</h2>
+                    <form method="POST">
+                        <?php if(isset($errormsg))
+                        {
+                            echo "<div style=\"padding-botton: 10px;\"><p style=\" color: #ed4956;\">$errormsg</p></div>";
+                        }
+                        ?>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">first name</label>
+                                    <input class="input--style-4" type="text" name="firstname" required="required">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">last name</label>
+                                    <input class="input--style-4" type="text" name="lastname" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">webmail</label>
+                                    <input class="input--style-4" type="text" name="webmail" required="required">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Enrollment Number</label>
+                                    <input class="input--style-4" type="number" name="enrollmentnumber" required="required" class="form-control" min = "100000000" max = "999999999">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Prefered Delivery Location</label>
+                                    <input class="input--style-4" type="text" name="address">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="number" name="contactno" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="password" name="pass" required="required">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Are you a student ?</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Yes
+                                            <input type="checkbox" checked="checked" id="isStu" name="isStu" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Department</label>
+                            <div class="rs-select2 select--no-search">
+                                <select name="department">
+                                    <option value="CSE" selected>CSE</option>
+                                    <option value="EEE">EEE</option>
+                                    <option value="DD">DD</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" style="width: 100%;" type="submit">Sign Up!!</button>
+                        </div>
+                    </form>
+                    <div class="p-t-15">
+                        <a class="btn btn--radius-2 btn--blue" style="width: 100%;" href="../login" >Back</a>
+                    </div>
+                </div>
             </div>
-            <?php }?>
-            <form class="form-horizontal style-form" method="post" name="profile" >
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">First Name</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="firstname" required="required" class="form-control" >
-                    </div>
-                    <label class="col-sm-2 col-sm-2 control-label">Last Name</label>
-                    <div class="col-sm-4">
-                        <input type="text" name="lastname" required="required" class="form-control" >
-                    </div>
-                    <label class="col-sm-2 col-sm-2 control-label">Webmail </label>
-                    <div class="col-sm-4">
-                        <input type="text" name="webmail" required="required" class="form-control">
-                    </div>
-                    <label class="col-sm-2 col-sm-2 control-label">Enrollment Number </label>
-                    <div class="col-sm-4">
-                        <input type="number" name="enrollmentnumber" required="required" class="form-control" min = "100000000" max = "999999999">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Contact</label>
-                    <div class="col-sm-4">
-                        <input type="number" name="contactno" required="required" class="form-control">
-                    </div>
-                    <label class="col-sm-2 col-sm-2 control-label">Prefered Delivery Location </label>
-                    <div class="col-sm-4">
-                    	<input type="text" name="address" class="form-control">
-                    </div>
-                    <label class="col-sm-2 col-sm-2 control-label">Password </label>
-                    <div class="col-sm-4">
-                        <input type="password" name="pass" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Department </label>
-                    <div class="col-sm-4">
-                        <select name="department" class="form-control" >
-                            <option value="CSE" selected>CSE</option>
-                            <option value="EEE">EEE</option>
-                            <option value="DD">DD</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-4">
-                    <label class="col-sm-2 col-sm-2 control-label">Are you a student ? </label>
-                        <input type="checkbox" id="isStu" name="isStu" value="1" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-10" style="padding-left:25% ">
-                        <button type="submit" name="submit" class="btn btn-primary">Sign Up!</button>
-                    </div>
-                </div>
-            </form>
         </div>
-	<br>
-	<h2><a href = "../login">Back</a></h2>
+    </div>
 </body>
 </html>
