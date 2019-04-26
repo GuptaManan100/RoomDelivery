@@ -127,7 +127,7 @@
                             <button class="btn btn--radius-2 btn--blue" style="width: 100%;" type="submit">Sign Up!!</button>
                         </div>
                     </form>
-                    <div class="p-t-15">
+                    <div class="p-t-15" align="center">
                         <a class="btn btn--radius-2 btn--blue" style="width: 100%;" href="../login" >Back</a>
                     </div>
                 </div>
