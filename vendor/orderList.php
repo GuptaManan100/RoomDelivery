@@ -1,6 +1,8 @@
 <?php
 
 	include('sessionvendor.php');
+	include('dashboard.php');
+  	echo "<div class=\"main-panel\" style=\"padding-top: 5%;\">";
 
 	$query = "Select * from products ";
 	$result = $db->query($query);
@@ -139,5 +141,6 @@ if(mysqli_num_rows($result) > 0 ){
 echo "<form action ='addOrder.php' method = 'GET' >
 <input type='submit' name='addProduct' value='Add a Product'>
 </form>";
+echo "</div>";
 
 ?>
