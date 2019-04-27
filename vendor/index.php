@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include('sessionvendor.php');
 ?>
 <!DOCTYPE html>
@@ -10,6 +10,7 @@
 	You are the vendor
 	<br>
 	<h2><a href = "logout.php">Sign Out</a></h2>
-	<a href= "purchaseList.php">YOYO</a>
+	<a href= "purchaseList.php">Purchase List</a>
+	<a href= "orderList.php">Orders</a>
 </body>
 </html>
