@@ -63,6 +63,7 @@
         echo "<div id=\"print-content\">";
         echo "OrderID = $last_id<br>";
         echo "CustomerID = ".$_SESSION['enrollnum']."<br>";
+        echo "Customer Name = ".$_SESSION['firstname']." ".$_SESSION['lastname']."<br>";
         echo "Order Time = $timeorder<br>";
         foreach( $_POST as $stuff => $val )
         {
