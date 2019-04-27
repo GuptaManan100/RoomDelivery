@@ -24,6 +24,7 @@
         if($stuff!="Location" && $items[str_replace("_"," ",$stuff)]<$val)
         {
           $_SESSION["error_order"] = str_replace("_"," ",$stuff);
+          //echo $items[str_replace("_"," ",$stuff)];
           header("Location: ./placeorder.php");
           die();
         }
