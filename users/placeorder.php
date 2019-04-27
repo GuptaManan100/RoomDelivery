@@ -5,10 +5,6 @@
   $sql = "Select name,quantity FROM products;";
   $result = $db->query($sql);
   $items = array();
-  if(isset($_GET['Error']))
-  {
-    echo "<h2>Quantity ordered of ".$_GET['Error']," is more than available!</h2>";
-  }
   echo "<h2 id = \"error\"></h2>";
   echo "<form class=\"form-horizontal \" action=\"/roomDelivery/users/completeorder.php\" method=\"POST\" onsubmit=\"return validate()\">";
   while($row = $result->fetch_assoc()) {
@@ -33,6 +29,11 @@
   echo "</form>";
   echo "</div>";
   echo "</div>";
+  if(isset($_SESSION["error_order"]))
+  {
+  	echo "<script> alert('Availability of ".$_SESSION["error_order"]." is less than ordered')</script>";
+  	unset($_SESSION["error_order"]);
+  }
 
 ?>
 
