@@ -1,6 +1,9 @@
 <?php
 
 include('sessionvendor.php');
+include('dashboard.php');
+echo "<div class=\"main-panel\" style=\"padding-top: 5%;\">";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -58,5 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   echo "<input type ='text' placeholder='Price' name = 'price' >";
   echo "<input type = 'submit' name = 'add' value = 'Add Item To Stock'> ";
   echo "</form>";
-  echo "<a href='orderList.php'>See All Products</a>"
+  echo "<a href='orderList.php'>See All Products</a>";
+echo "</div>";
+
  ?>

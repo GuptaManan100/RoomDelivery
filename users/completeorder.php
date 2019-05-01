@@ -25,6 +25,7 @@
         {
           echo $items[str_replace("_"," ",$stuff)]." ".$val";
           //header("Location: ./placeorder.php/?Error=$stuff");
+
         }
       }
       foreach( $_POST as $stuff => $val )
@@ -43,6 +44,11 @@
           $items[str_replace("_"," ",$stuff)]-=$val;
           $sql = "UPDATE products SET quantity = ".$items[str_replace("_"," ",$stuff)]." WHERE name = '".str_replace("_"," ",$stuff)."';";
           $db->query($sql);
+          if($items[str_replace("_"," ",$stuff)] < 10)
+          {
+            $sql = "INSERT INTO shopList VALUES (null,'".$codes[str_replace("_"," ",$stuff)]."',100)";
+            $db->query($sql);
+          }
         }
         $amount+=$prices[str_replace("_"," ",$stuff)]*$val;
       }
@@ -57,6 +63,7 @@
         echo "<div id=\"print-content\">";
         echo "OrderID = $last_id<br>";
         echo "CustomerID = ".$_SESSION['enrollnum']."<br>";
+        echo "Customer Name = ".$_SESSION['firstname']." ".$_SESSION['lastname']."<br>";
         echo "Order Time = $timeorder<br>";
         foreach( $_POST as $stuff => $val )
         {
@@ -78,7 +85,7 @@
       }
       else
       {
-        header("Location: ./placeorder.php/");
+        header("Location: ./placeorder.php");
       }
    }
    else

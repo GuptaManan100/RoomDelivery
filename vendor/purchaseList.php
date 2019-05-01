@@ -1,6 +1,8 @@
 <?php
 
 	include('sessionvendor.php');
+	include('dashboard.php');
+  	echo "<div class=\"main-panel\" style=\"padding-top: 5%;\">";
 
 	$query = "Select productCode, quantityToBuy from shopList ";
 	$result = $db->query($query);
@@ -97,7 +99,6 @@ if(mysqli_num_rows($result) > 0 ){
 		   </form><br>";
 		 $i = $i+1;
 	}
-	echo "</div>";
 }
 
 echo "<div>";
@@ -108,4 +109,6 @@ echo "<input type = 'submit' name = 'add' value = 'Add Item'> ";
 echo "</form>";
 echo "</div>";
 
+
+echo "</div>";
 ?>
