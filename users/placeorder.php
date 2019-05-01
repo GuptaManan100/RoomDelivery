@@ -24,7 +24,6 @@
   echo "<input class=\"form-control\" type=\"text\" name=\"Location\" value=\"".$_SESSION['preferedLocation'] ."\"><br>";
   echo "</div>";
   echo "</div>";
-
   echo "<input type=\"submit\" value=\"Place Order\" class=\"btn btn-primary\">";
   echo "</form>";
   echo "</div>";
@@ -56,4 +55,3 @@
           return true
       }
 </script>
-

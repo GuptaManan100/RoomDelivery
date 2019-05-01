@@ -23,7 +23,7 @@
       {
         if($stuff!="Location" && $items[str_replace("_"," ",$stuff)]<$val)
         {
-          echo $items[str_replace("_"," ",$stuff)]." ".$val";
+          echo $items[str_replace("_"," ",$stuff)]." ".$val;
           //header("Location: ./placeorder.php/?Error=$stuff");
 
         }
