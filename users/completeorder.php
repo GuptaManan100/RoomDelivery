@@ -22,7 +22,10 @@
    		foreach( $_POST as $stuff => $val )
       {
         if($stuff!="Location" && $items[str_replace("_"," ",$stuff)]<$val)
-          header("Location: ./placeorder.php/?Error=$stuff");
+        {
+          echo $items[str_replace("_"," ",$stuff)]." ".$val";
+          //header("Location: ./placeorder.php/?Error=$stuff");
+        }
       }
       foreach( $_POST as $stuff => $val )
       {
