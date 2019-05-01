@@ -13,7 +13,13 @@
         </div>
 
         <ul class="nav">
-            <li>
+					<li>
+							<a href="/roomDelivery/vendor/pendingOrders.php">
+									<p>Pending Orders</p>
+							</a>
+					</li>
+
+						<li>
                 <a href="/roomDelivery/vendor/purchaseList.php">
                     <p>Purchase List</p>
                 </a>
