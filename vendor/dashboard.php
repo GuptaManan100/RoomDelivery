@@ -34,6 +34,11 @@
                     <p>Add Product</p>
                 </a>
             </li>
+						<li>
+								<a href="/roomDelivery/vendor/">
+										<p>All Orders</p>
+								</a>
+						</li>
             <li>
                 <a href="/roomDelivery/vendor/logout.php">
                     <p>Sign Out</p>

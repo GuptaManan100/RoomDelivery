@@ -78,10 +78,12 @@ if(mysqli_num_rows($result) > 0 ){
 		$prodname="";
 		$query_1 = "Select name FROM products WHERE productCode = '". $row['productCode']. "'; ";
     	$result_1 = $db->query($query_1);
+			echo "<div style='margin-bottom:1%;' class='list-group-item'>";
+
     	if(  mysqli_num_rows($result_1)>0)
     	{
     		while($row_1 = mysqli_fetch_array($result_1)) {
-				echo "<span>Product Name :" .  strval($row_1['name']) ."</span>";
+				echo "<h4>Product Name :" .  strval($row_1['name']) ."</h4><br>";
 				$prodname = strval($row_1['name']);
     		}
     	}
@@ -90,15 +92,21 @@ if(mysqli_num_rows($result) > 0 ){
 		 echo " <span>Quantity to buy : </span>".
 		 "<input type = 'text' value= '".$row['quantityToBuy']." '>";
 		 echo  "<form method = 'POST' action = 'purchaseList.php'>";
-     echo "<input type='submit'
+     echo "<input type='submit' style = 'margin-top:1%;background:#d43f3a;color:white;' class='btn btn btn-danger'
 		 name='clicked[" .$row['productCode']."]'
 		 value='Delete Item'>
 		   </form><br>";
+			 echo "</div>";
+
 		 $i = $i+1;
 	}
 }
 
-echo "<div>";
+else {
+	echo "<h4 class='jumbotron'>No Orders in the purchase list yet</h4>";
+}
+
+echo "<h4 style='font-weight:bold;' class='jumbotron'>Add Items</h4><div>";
 echo "<form class=\"form-horizontal \" method = 'POST' action = 'purchaseList.php' > ";
 echo "<input style='margin-bottom:3%;' type ='text' placeholder ='Product ID' name = 'productID' >";
 echo "<br>";

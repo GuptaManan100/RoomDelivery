@@ -35,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           }
           else {
               $query = "Insert into products values (
-                '".$_POST['productID']."',
-                '".$_POST['name']."',
-                '".$_POST['quantity']."',
-                '".$_POST['price']."'
+                '".trim($_POST['productID'])."',
+                '".trim($_POST['name'])."',
+                '".trim($_POST['quantity'])."',
+                '".trim($_POST['price'])."'
               ); ";
 
               if($db->query($query))

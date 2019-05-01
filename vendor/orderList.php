@@ -68,9 +68,9 @@
 			if( isset($_POST['clicked'] ))
 			{
 					$query_2 =  "Update products
-		      set quantity = '" .$_REQUEST["quantity"].
-		      "' ,price = '".$_POST["price"].
-		      "' , name = '".$_POST["name"].
+		      set quantity = '" .trim($_REQUEST["quantity"]).
+		      "' ,price = '".trim($_POST["price"]).
+		      "' , name = '".trim($_POST["name"]).
 		      "' WHERE productCode = '".key($_POST['clicked'])."' ";
 		      echo $query_2;
 					if ($db->query($query_2))

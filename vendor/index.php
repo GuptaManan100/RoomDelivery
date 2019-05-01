@@ -5,7 +5,6 @@
 		echo "<div align='center' class='main-panel' style='padding-top: 5%;'>";
 		$sysDate = date("Y-m-d") ." ". date("H:i:s");
 
-
 		if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
 		echo "<form action ='index.php' method='POST'>
@@ -19,6 +18,7 @@
 	}
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		  	$total=0;
 
 					echo "<form action ='index.php' method='POST'>
 						<input type='radio' name='order'";
@@ -34,6 +34,7 @@
 						<input  type='text' name='date2' id='dateEnd' alt='date' class='IP_calendar' title='Y-m-d'>
 					</form>";
 
+					echo "<h4 class='jumbotron' id='totalAmount'> Total Sale in the Period = Rs.". $total ." </h4>";
 
 			if(isset($_POST['type'])){
 
@@ -102,7 +103,7 @@
 							//dsasd
 
 
-
+							$total += $row['amount'];
 							echo "<span >Amount = ". $row['amount']."</span><br>";
 
 								//Asia
@@ -132,6 +133,17 @@
 						echo "<br>";
 
 					}
+
+					//echo "<h4 class='jumbotron'> Total Sale in the Period = Rs.". $total ." </h4>";
+
+						  /*$('#period').click(function(){
+						    $("#dateStart").show();
+						    $("#dateEnd").show();
+						  });*/
+
+
+					//echo "<script> $('#totalAmount').html('Sale in the Period = Rs');</script>";
+					echo "<script> document.getElementById('totalAmount').innerHTML='Sale in the Period = Rs.$total';</script>";
 
 				}
 
